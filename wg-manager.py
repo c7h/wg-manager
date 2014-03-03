@@ -289,7 +289,7 @@ class CursesGUI(object):
 		for person, td in self.app.birthdays():
 			if td < 0:
 				#person hat dieses jahr noch geburtstag
-				str = "%s wird in %3i Tagen %i" % (person.name, td * -1, person.alter )
+				str = "%s wird in %i Tagen %i" % (person.name, td * -1, person.alter )
 			elif td == 0:
 				#person hat heute geburtstag
 				str = "*** %s hat HEUTE Geburtstag ***" % person.name
@@ -301,7 +301,7 @@ class CursesGUI(object):
 				continue
 			self.scr.addstr(linecounter, 2, str)
 			bday_str = person.birthdate.date().isoformat()
-			self.scr.addstr(linecounter, self.width-len(bday_str)-3, "["+bday_str+"]")
+			#self.scr.addstr(linecounter, self.width-len(bday_str)-3, "["+bday_str+"]")
 			linecounter += 1
 		
 		
